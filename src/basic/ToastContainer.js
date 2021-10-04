@@ -68,8 +68,8 @@ class ToastContainer extends Component {
   componentWillUnmount() {
     // Keyboard.removeListener('keyboardDidShow', this.keyboardDidShow);
     // Keyboard.removeListener('keyboardDidHide', this.keyboardDidHide);
-    this.kbDidShow?.remove();
-    this.kbDidHide?.remove();
+    if (this.kbDidShow) this.kbDidShow.remove();
+    if (this.kbDidHide) this.kbDidHide.remove();
   }
 
   getToastStyle() {
